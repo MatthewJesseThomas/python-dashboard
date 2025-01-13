@@ -2,6 +2,9 @@ import dash
 import dash_core_components as dcc
 import dash_html_components as html
 import plotly.graph_objs as go
+import os
+
+port = int(os.getenv("port", 8050))
 
 # Create a Dash application
 app = dash.Dash(__name__)
@@ -71,4 +74,4 @@ app.layout = html.Div(
 
 # Run the Application
 if __name__ == '__main__':
-    app.run_server(debug=True, host="0.0.0.0", port=os.getenv("port"))
+    app.run_server(debug=True, host="127.0.0.1", port=port)
